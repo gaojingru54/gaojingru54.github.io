@@ -229,6 +229,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/20/1.20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2025/01/20/1.20/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2025-01-20T22:35:10+08:00">
+                2025-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##npm创建vue<br>  1.node -v<br>  2.npm -v<br>  3.npm init<br>  4.npm config get registry<br>  5.npm config set registry <a target="_blank" rel="noopener" href="https://registry.npmmirror.com/">https://registry.npmmirror.com</a><br>  6.npm install -g vue<br>##vue<br>#prop的属性使用<br>1.作用是在子组件中接收父组件的值<br>&#x2F;&#x2F;父组件传值<br><template><br>    <div><br>        <Example :data1='data1' :data2='`属性值2`' /><br>    </div><br></template></p>
+<script>
+    import Example from '@/components/expmple'
+    export default {
+        components:{
+            Example
+        }
+    }
+</script>
+<p>&#x2F;&#x2F;子组件接收值<br><template><br>    <div><br>        <h2></h2><br>        <p></p><br>    </div><br></template></p>
+<script>
+export default{
+    //接收值 
+    props: ['data1','data2'],
+}
+</script>
+<p>2.props接收值<br>（1）数组方式</p>
+<script>
+export default{
+    //接收值 
+    props: ['data1','data2'],
+}
+</script>
+<p>（2）简单对象形式</p>
+<script>
+export default{
+    //接收值 
+    props: {
+        data1: Number,
+        data2: String
+    },
+}
+</script>
+<p>（3）严格对象形式</p>
+<script>
+export default{
+    //接收值 
+    props: {
+        data1: {
+            type: String,
+            required: true,
+            default: '',
+            validator (value) {
+              return (value.length < 5)
+            }
+        },
+        data2: {
+            type: String,
+            required: true,
+            default: () => ['', '', '']
+        },
+    },
+}
+</script>
+<p>#vue的生命周期及钩子函数<br>生命周期四个阶段1.创建阶段2.挂载阶段3.更新阶段4.销毁阶段<br>函数：1. beforeCreate2. created3. beforeMount4. mounted5. beforeUpdate6. updated7. beforeDestroy8.destroyed<br><template><br>  <div id="app"><br>    <p id="box"></p><br>    &lt;button @click&#x3D;”change”&gt;更新</button><br>  </div><br></template></p>
+<script>
+export default {
+  data () {
+    return {
+      msg: 'hello'
+    }
+  },
+  methods: {
+    change () {
+      this.msg = 'hello world'
+    }
+  },
+  beforeCreate () {
+    console.log('---------------->beforeCreate')
+    console.log(this.msg, document.getElementById('box'))
+  },
+  created () {
+    console.log('---------------->created')
+    console.log(this.msg, document.getElementById('box'))
+  },
+  beforeMount () {
+    console.log('---------------->beforeMount')
+    console.log(this.msg, document.getElementById('box'))
+  },
+  mounted () {
+    console.log('---------------->mounted')
+    console.log(this.msg, document.getElementById('box'))
+  },
+  beforeUpdate () {
+    console.log('---------------->beforeUpdate')
+    console.log(this.$el.innerHTML)
+    console.log(this.msg, document.getElementById('box'))
+  },
+  updated () {
+    console.log('---------------->updated')
+    console.log(this.$el.innerHTML)
+    console.log(this.msg, document.getElementById('box'))
+  }
+}
+</script>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/19/1.19/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -872,7 +1087,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
